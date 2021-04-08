@@ -18,13 +18,14 @@ app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost/workout", {
-  useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useNewUrlParser: true
+  
 });
 
 // getting routes
-app.use(require("./routes/api.js"));
-app.use(require("./routes/routes.js"));
+app.use(require("./routes/apiroutes.js"));
+app.use(require("./routes/htmlroutes.js"));
 
 app.listen(PORT, () => {
     console.log(`Open up localhost ${PORT}!`);

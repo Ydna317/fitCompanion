@@ -25,6 +25,7 @@ router.put('/api/workouts/:id', ({ body, params }, res) => {
     });
 });
 
+// using aggregate to combine workouts where total duration = sum of exercise duration.
 router.get('/api/workouts', (req, res) => {
   Workout.aggregate([
     {

@@ -1,3 +1,7 @@
+module.exports = {
+  Workout: require('./workout')
+};
+
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
