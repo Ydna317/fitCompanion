@@ -43,7 +43,7 @@ router.get('/api/workouts', (req, res) => {
       res.json(err);
     });
 });
-
+// pulls range of seven days for previous workouts
 router.get('/api/workouts/range', (req, res) => {
   Workout.aggregate([
     {
@@ -64,15 +64,4 @@ router.get('/api/workouts/range', (req, res) => {
       res.json(err);
     });
 });
-
-router.delete('/api/workouts', ({ body }, res) => {
-  Workout.deletebyID(body.id)
-    .then(() => {
-      res.json(true);
-    })
-    .catch((err) => {
-      res.json(err);
-    });
-});
-
 module.exports = router;
